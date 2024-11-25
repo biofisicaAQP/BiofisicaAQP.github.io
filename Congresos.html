@@ -15,13 +15,19 @@
     <div class="container">
 
         <div class="tab-bar">
-            <button class="tab-button active" data-congreso="sab2024">SAB24</button>
-            <button class="tab-button" data-congreso="sab2022">SAB22</button>
-            <button class="tab-button" data-congreso="flap2024">FLAP24</button>
+            <button class="tab-button active" data-congreso="sab2024">SAB2024</button>
+            <button class="tab-button" data-congreso="flap2024">FLAP2024</button>
+            <button class="tab-button" data-congreso="JIFFyB2024">JI2024</button>
+            <button class="tab-button" data-congreso="fib2023">FIB2023</button>
+            <button class="tab-button" data-congreso="sab2022">SAB2022</button>
             <!-- Puedes añadir más botones aquí -->
         </div>
 
         <div class="carousel-congresos">
+
+
+
+
             <!-- Slide SAB2024 -->
             <div class="slides-congresos active" id="congreso-sab2024">
                 <h2 align="center">Congreso de la Sociedad Argentina de Biofísica - Bahía Blanca 2024</h2>
@@ -74,6 +80,128 @@
                     <span class="dot" data-index="2"></span>
                 </div>
             </div>
+
+
+
+            <!-- Slide FLAP2024 -->
+            <div class="slides-congresos" id="congreso-flap2024">
+                <h2 align="center">XXVII Congreso de la Federación Latinoamericana de Parasitología</h2>
+                <h2 align="center">XII Congreso de la Sociedad Argentina de Protozoología</h2>
+                <p align="center">Posters presentados por nuestro laboratorio</p>
+                
+                <!-- Carrusel de Posters para FLAP2024 -->
+                <div class="posters-carousel" data-congreso="flap2024">
+                    <!-- Slides de Posters FLAP2024 -->
+                    <div class="slides-posters active">
+                        <a href="assets/files/Ramoa_FLAP24.pdf" target="_blank">
+                            <img src="assets/thumbnails/Ramoa_FLAP24.jpg" alt="Poster Ramoa FLAP2024">
+                        </a>
+                        <div class="poster-info">
+                            <h3>Characterization of the TcAQPα Aquaporin in Trypanosoma cruzi and Its Impact on H₂O₂ Tolerance</h3>
+                            <p>Autores: Úrsula Ramoa; Rocío Bussolini Lizundia; Ramiro Tomasina; Renzo Tinaglini; Karina Alleva; María Laura Chiribao; Victoria Vitali</p>
+                        </div>
+                    </div>
+                    <!-- Añade más slides de posters para FLAP2024 según sea necesario -->
+                </div>
+
+                <!-- Controles del Carrusel de Posters para FLAP2024 -->
+                <a class="prev-poster" data-congreso="flap2024">&#10094;</a>
+                <a class="next-poster" data-congreso="flap2024">&#10095;</a>
+
+                <!-- Indicadores del Carrusel de Posters para FLAP2024 -->
+                <div class="indicator" data-congreso="flap2024">
+                    <span class="dot active" data-index="0"></span>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="slides-congresos active" id="congreso-JIFFyB2024">
+                <h2 align="center">Jornada de Jovenes Investigadores - FFyB-UBA - 2024 </h2>
+                <p align="center">Posters presentados por nuestro laboratorio.</p>
+                
+                <!-- Carrusel de Posters para JIFFyB2024 -->
+                <div class="posters-carousel" data-congreso="JIFFyB2024">
+                    <!-- Slides de Posters JIFFyB2024 -->
+                    <div class="slides-posters active">
+                        <a href="assets/files/Ramoa__JIFFyB24.pdf" target="_blank">
+                            <img src="assets/thumbnails/Ramoa_JIFFyB24.jpg" alt="Poster Ramoa JIFFyB2024">
+                        </a>
+                        <div class="poster-info">
+                            <h3>Estudio de la función y localización de acuaporinas AQPX de Trypanosoma cruzi</h3>
+                            <p>Autores: Úrsula Ramoa; Victoria Vitali; Renzo Tinaglini; Luis Bredeston; C Robello; Karina Alleva; María Laura Chiribao</p>
+                        </div>
+                    </div>
+
+                    <div class="slides-posters">
+                        <a href="assets/files/Chevriau_JIFFyB24.pdf" target="_blank">
+                            <img src="assets/thumbnails/Chevriau_JIFFyB24.jpg" alt="Poster Chevriau JIFFyB2024">
+                        </a>
+                        <div class="poster-info">
+                            <h3>Estudio de las bases estructurales de la selectividad de transporte de H2O2 en peroxiporinas</h3>
+                            <p>Autores: Chevriau Jonathan; Gerardo Zerbetto De Palma; Agustina Canessa Fortuna; Ari Zeida; Karina Alleva</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Controles del Carrusel de Posters para JIFFyB2024 -->
+                <a class="prev-poster" data-congreso="JIFFyB2024">&#10094;</a>
+                <a class="next-poster" data-congreso="JIFFyB2024">&#10095;</a>
+
+                <!-- Indicadores del Carrusel de Posters para JIFFyB2024 -->
+                <div class="indicator" data-congreso="JIFFyB2024">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                </div>
+            </div>
+
+
+            
+            <div class="slides-congresos active" id="congreso-fib2023">
+                <h2 align="center">Frontiers In Bioscience 4 Symposium</h2>
+                <p align="center">Posters presentados por nuestro laboratorio.</p>
+                
+                <!-- Carrusel de Posters para fib2023 -->
+                <div class="posters-carousel" data-congreso="fib2023">
+                    <!-- Slides de Posters fib2023 -->
+                    <div class="slides-posters active">
+                        <a href="assets/files/Ramoa_FIB23.pdf" target="_blank">
+                            <img src="assets/thumbnails/Ramoa_FIB23.jpg" alt="Poster Ramoa fib2023">
+                        </a>
+                        <div class="poster-info">
+                            <h3>Decoding AQPX Channels: Understanding selective transport and
+                                localization of Trypanosoma cruzi aquaporins</h3>
+                            <p>Autores: Úrsula Ramoa; Victoria Vitali; Gerardo Zerbetto De Palma; Agustina Canessa Fortuna; Fiorella Tesan; Luis Bredeston; Maria Laura Chiribao; Karina Alleva</p>
+                        </div>
+                    </div>
+
+                    <div class="slides-posters">
+                        <a href="assets/files/Bussolini_Lizundia_FIB23.pdf" target="_blank">
+                            <img src="assets/thumbnails/Bussolini_Lizundia_FIB23.jpg" alt="Poster Bussolini Lizundia fib2023">
+                        </a>
+                        <div class="poster-info">
+                            <h3>Functional Diversity in the PIP Subfamily: Insights from Sequence Similarity Networks</h3>
+                            <p>Autores: Rocío Bussolini Lizundia; Romina Fox; Victoria Vitali; Karina Alleva</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Controles del Carrusel de Posters para fib2023 -->
+                <a class="prev-poster" data-congreso="fib2023">&#10094;</a>
+                <a class="next-poster" data-congreso="fib2023">&#10095;</a>
+
+                <!-- Indicadores del Carrusel de Posters para fib2023 -->
+                <div class="indicator" data-congreso="fib2023">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                </div>
+            </div>
+
+            
 
             <!-- Slide SAB2022 -->
             <div class="slides-congresos" id="congreso-sab2022">
@@ -128,40 +256,11 @@
                 </div>
             </div>
 
-            <!-- Slide FLAP2024 -->
-            <div class="slides-congresos" id="congreso-flap2024">
-                <h2 align="center">XXVII Congreso de la Federación Latinoamericana de Parasitología</h2>
-                <h2 align="center">XII Congreso de la Sociedad Argentina de Protozoología</h2>
-                <p align="center">Posters presentados por nuestro laboratorio</p>
-                
-                <!-- Carrusel de Posters para FLAP2024 -->
-                <div class="posters-carousel" data-congreso="flap2024">
-                    <!-- Slides de Posters FLAP2024 -->
-                    <div class="slides-posters active">
-                        <a href="assets/files/Ramoa_FLAP24.pdf" target="_blank">
-                            <img src="assets/thumbnails/Ramoa_FLAP24.jpg" alt="Poster Ramoa FLAP2024">
-                        </a>
-                        <div class="poster-info">
-                            <h3>Characterization of the TcAQPα Aquaporin in Trypanosoma cruzi and Its Impact on H₂O₂ Tolerance</h3>
-                            <p>Autores: Úrsula Ramoa; Rocío Bussolini Lizundia; Ramiro Tomasina; Renzo Tinaglini; Karina Alleva; María Laura Chiribao; Victoria Vitali</p>
-                        </div>
-                    </div>
-                    <!-- Añade más slides de posters para FLAP2024 según sea necesario -->
-                </div>
+        
 
-                <!-- Controles del Carrusel de Posters para FLAP2024 -->
-                <a class="prev-poster" data-congreso="flap2024">&#10094;</a>
-                <a class="next-poster" data-congreso="flap2024">&#10095;</a>
 
-                <!-- Indicadores del Carrusel de Posters para FLAP2024 -->
-                <div class="indicator" data-congreso="flap2024">
-                    <span class="dot active" data-index="0"></span>
-                </div>
-            </div>
-
-            <!-- Puedes añadir más slides para otros congresos aquí -->
+    
         </div>
-
         <!-- Controles del Carrusel de Congresos -->
         <a class="prev-congresos">&#10094;</a>
         <a class="next-congresos">&#10095;</a>
