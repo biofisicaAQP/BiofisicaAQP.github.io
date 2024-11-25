@@ -1,0 +1,239 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #004d99;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Estilos del Carrusel de Congresos */
+.carousel-congresos {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.slides-congresos {
+    display: none;
+}
+
+.slides-congresos.active {
+    display: block;
+}
+
+.slides-congresos h2 {
+    color: #004d99;
+    margin-bottom: 10px;
+}
+
+.slides-congresos p {
+    margin-bottom: 20px;
+}
+
+/* Navegación del Carrusel de Congresos */
+.prev-congresos, .next-congresos {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 3px;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.next-congresos {
+    right: 10px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev-congresos {
+    left: 10px;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev-congresos:hover, .next-congresos:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Estilos para Posters */
+.posters-carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.slides-posters {
+    display: none;
+    text-align: center;
+}
+
+.slides-posters.active {
+    display: block;
+}
+
+.slides-posters img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.slides-posters img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.poster-info {
+    margin-top: 10px;
+}
+
+.poster-info h3 {
+    margin: 5px 0;
+    color: #333;
+}
+
+.poster-info p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Navegación del Carrusel de Posters */
+.prev-poster, .next-poster {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 8px;
+    margin-top: -20px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 50%;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.next-poster {
+    right: 10px;
+}
+
+.prev-poster {
+    left: 10px;
+}
+
+.prev-poster:hover, .next-poster:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Indicadores del Carrusel de Posters */
+.indicator {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.indicator span {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator span.active {
+    background-color: #004d99;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .slides-posters img {
+        width: 100%;
+    }
+    .posters-carousel {
+        max-width: 100%;
+    }
+}
+
+footer {
+    background-color: #004d99;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+
+
+
+/* Estilos para la barra de pestañas */
+.tab-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #d5d5d5;
+}
+
+.tab-button.active {
+    background-color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+    color: #004d99;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .tab-button {
+        padding: 8px 12px;
+        font-size: 14px;
+        margin: 0 3px;
+    }
+}
