@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congresos - Laboratorio de Biofísica de Acuaporinas</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #004d99;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* Estilos del Carrusel de Congresos */
+        .carousel-congresos {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .slides-congresos {
+            display: none;
+        }
+
+        .slides-congresos.active {
+            display: block;
+        }
+
+        .slides-congresos h2 {
+            color: #004d99;
+            margin-bottom: 10px;
+        }
+
+        .slides-congresos p {
+            margin-bottom: 20px;
+        }
+
+        /* Navegación del Carrusel de Congresos */
+        .prev-congresos, .next-congresos {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 3px;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+
+        .next-congresos {
+            right: 10px;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev-congresos {
+            left: 10px;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .prev-congresos:hover, .next-congresos:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Estilos para Posters */
+        .posters-carousel {
+            position: relative;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 10px;
+        }
+
+        .slides-posters {
+            display: none;
+            text-align: center;
+        }
+
+        .slides-posters.active {
+            display: block;
+        }
+
+        .slides-posters img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .slides-posters img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .poster-info {
+            margin-top: 10px;
+        }
+
+        .poster-info h3 {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .poster-info p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Navegación del Carrusel de Posters */
+        .prev-poster, .next-poster {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 8px;
+            margin-top: -20px;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 50%;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+
+        .next-poster {
+            right: 10px;
+        }
+
+        .prev-poster {
+            left: 10px;
+        }
+
+        .prev-poster:hover, .next-poster:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Indicadores del Carrusel de Posters */
+        .indicator {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .indicator span {
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .indicator span.active {
+            background-color: #004d99;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .slides-posters img {
+                width: 100%;
+            }
+            .posters-carousel {
+                max-width: 100%;
+            }
+        }
+
+        footer {
+            background-color: #004d99;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Participación en Congresos</h1>
+    </header>
+
+    <div class="container">
+        <div class="carousel-congresos">
+            <!-- Slide SAB2024 -->
+            <div class="slides-congresos active" id="congreso-sab2024">
+                <h2 align="center">Congreso de la Sociedad Argentina de Biofisica - Bahia Blanca 2024</h2>
+                <p align="center">Posters presentados por nuestro laboratorio.</p>
+                
+                <!-- Carrusel de Posters para SAB2024 -->
+                <div class="posters-carousel" data-congreso="sab2024">
+                    <!-- Slides de Posters SAB2024 -->
+                    <div class="slides-posters active">
+                        <a href="assets/files/Chevriau_SAB24.pdf" target="_blank">
+                            <img src="assets/thumbnails/Chevriau_SAB24.jpg" alt="Poster Chevriau SAB2024">
+                        </a>
+                        <div class="poster-info">
+                            <h3>Conserved Peroxiporin Function in MIP Channels: Structural and Thermodynamical Insights</h3>
+                            <p>Presentado por Jonathan Chevriau</p>
+                            <p>Autores: </p>
+                        </div>
+                    </div>
+
+                    <div class="slides-posters">
+                        <a href="assets/files/Buzzolini_Lizundia_SAB24.pdf" target="_blank">
+                            <img src="assets/thumbnails/Buzzolini_Lizundia_SAB24.jpg" alt="Poster Buzzolini & Lizundia SAB2024">
+                        </a>
+                        <div class="poster-info">
+                            <h3>Buzzolini & Lizundia</h3>
+                            <p>Presentado por Rocio Buzzolini Lizundia</p>
+                            <p>Autores: </p>
+                        </div>
+                    </div>
+
+                    <div class="slides-posters">
+                        <a href="assets/files/Altieri_SAB24.pdf" target="_blank">
+                            <img src="assets/thumbnails/Altieri_SAB24.jpg" alt="Poster Altieri SAB2024">
+                        </a>
+                        <div class="poster-info">
+                            <h3>Altieri</h3>
+                            <p>Presentado por Lucia Gonzales Altieri</p>
+                            <p>Autores: </p>
+                        </div>
+                    </div>
+
+                    <!-- Añade más slides de posters para SAB2024 según sea necesario -->
+                </div>
+
+                <!-- Controles del Carrusel de Posters para SAB2024 -->
+                <a class="prev-poster" data-congreso="sab2024">&#10094;</a>
+                <a class="next-poster" data-congreso="sab2024">&#10095;</a>
+
+                <!-- Indicadores del Carrusel de Posters para SAB2024 -->
+                <div class="indicator" data-congreso="sab2024">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <!-- Añade más dots según el número de posters -->
+                </div>
+            </div>
+
+            <!-- Slide SAB2022 -->
+            <div class="slides-congresos" id="congreso-sab2022">
+                <h2 align="center">Congreso de la Sociedad Argentina de Biofisica - Rosario 2022</h2>
+                <p align="center">Posters presentados por nuestro laboratorio</p>
+                
+                <!-- Carrusel de Posters para SAB2022 -->
+                <div class="posters-carousel" data-congreso="sab2022">
+                    <!-- Slides de Posters SAB2022 -->
+                    <div class="slides-posters active">
+                        <a href="assets/files/Chevriau_SAB22.pdf" target="_blank">
+                            <img src="assets/thumbnails/Chevriau_SAB22.jpg" alt="Poster Chevriau SAB2022">
+                        </a>
+                        <div class="poster-info">
+                            <h3>H2O2 and H2O transport by Medicago truncatula PIP2 aquaporins</h3>
+                            <p>Presentado por Jonathan Chevriau</p>
+                        </div>
+                    </div>
+
+                    <div class="slides-posters">
+                        <a href="assets/files/Canessa_Fortuna_SAB22.pdf" target="_blank">
+                            <img src="assets/thumbnails/Canessa_Fortuna_SAB22.jpg" alt="Poster Canessa Fortuna SAB2022">
+                        </a>
+                        <div class="poster-info">
+                            <h3>Role of prolines in PIP2 aquaporin gating mechanism</h3>
+                            <p>Presentado por Agustina Canessa Fortuna</p>
+                        </div>
+                    </div>
+
+                    <div class="slides-posters">
+                        <a href="assets/files/Zerbetto_De_Palma_SAB22.pdf" target="_blank">
+                            <img src="assets/thumbnails/Zerbetto_De_Palma_SAB22.jpg" alt="Poster Zerbetto De Palma SAB2022">
+                        </a>
+                        <div class="poster-info">
+                            <h3>A python toolkit for experimental and computational studies of water transport through channels</h3>
+                            <p>Presentado por Gerardo Zerbetto De Palma</p>
+                        </div>
+                    </div>
+
+                    <!-- Añade más slides de posters para SAB2022 según sea necesario -->
+                </div>
+
+                <!-- Controles del Carrusel de Posters para SAB2022 -->
+                <a class="prev-poster" data-congreso="sab2022">&#10094;</a>
+                <a class="next-poster" data-congreso="sab2022">&#10095;</a>
+
+                <!-- Indicadores del Carrusel de Posters para SAB2022 -->
+                <div class="indicator" data-congreso="sab2022">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <!-- Añade más dots según el número de posters -->
+                </div>
+            </div>
+
+            <!-- Puedes añadir más slides para otros congresos aquí -->
+        </div>
+
+        <!-- Controles del Carrusel de Congresos -->
+        <a class="prev-congresos">&#10094;</a>
+        <a class="next-congresos">&#10095;</a>
+    </div>
+
+    <footer>
+        &copy; 2024 Laboratorio de Biofísica de Acuaporinas. Todos los derechos reservados.
+    </footer>
+
+    <script>
+        // JavaScript para el Carrusel de Congresos
+        let currentCongreso = 0;
+        const congresos = document.getElementsByClassName("slides-congresos");
+        const totalCongresos = congresos.length;
+        const prevCongresos = document.querySelector(".prev-congresos");
+        const nextCongresos = document.querySelector(".next-congresos");
+
+        function showCongreso(index) {
+            for (let i = 0; i < totalCongresos; i++) {
+                congresos[i].classList.remove("active");
+            }
+            congresos[index].classList.add("active");
+        }
+
+        function nextCongreso() {
+            currentCongreso = (currentCongreso + 1) % totalCongresos;
+            showCongreso(currentCongreso);
+        }
+
+        function prevCongresoFunc() {
+            currentCongreso = (currentCongreso - 1 + totalCongresos) % totalCongresos;
+            showCongreso(currentCongreso);
+        }
+
+        // Eventos de los botones del Carrusel de Congresos
+        nextCongresos.addEventListener("click", function(){
+            nextCongreso();
+        });
+
+        prevCongresos.addEventListener("click", function(){
+            prevCongresoFunc();
+        });
+
+        // Eliminado el auto-cambio de slides de Congresos
+
+        // JavaScript para los Carruseles de Posters
+        const postersCarousels = document.querySelectorAll(".posters-carousel");
+
+        postersCarousels.forEach(function(carousel) {
+            let currentPoster = 0;
+            const posters = carousel.getElementsByClassName("slides-posters");
+            const totalPosters = posters.length;
+            const congressoData = carousel.getAttribute('data-congreso');
+            const prevPoster = document.querySelector(`.prev-poster[data-congreso="${congressoData}"]`);
+            const nextPoster = document.querySelector(`.next-poster[data-congreso="${congressoData}"]`);
+            const dotsContainer = document.querySelector(`.indicator[data-congreso="${congressoData}"]`);
+            const dots = dotsContainer.getElementsByClassName("dot");
+
+            function showPosterFunc(index) {
+                for (let i = 0; i < totalPosters; i++) {
+                    posters[i].classList.remove("active");
+                    dots[i].classList.remove("active");
+                }
+                posters[index].classList.add("active");
+                dots[index].classList.add("active");
+                currentPoster = index;
+            }
+
+            function nextPosterFunc() {
+                currentPoster = (currentPoster + 1) % totalPosters;
+                showPosterFunc(currentPoster);
+            }
+
+            function prevPosterFunc() {
+                currentPoster = (currentPoster - 1 + totalPosters) % totalPosters;
+                showPosterFunc(currentPoster);
+            }
+
+            // Eventos de los botones del Carrusel de Posters
+            nextPoster.addEventListener("click", function(){
+                nextPosterFunc();
+                resetTimerPosters();
+            });
+
+            prevPoster.addEventListener("click", function(){
+                prevPosterFunc();
+                resetTimerPosters();
+            });
+
+            // Eventos de los dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].addEventListener("click", function(){
+                    let index = parseInt(this.getAttribute("data-index"));
+                    if (!isNaN(index)) {
+                        showPosterFunc(index);
+                        resetTimerPosters();
+                    }
+                });
+            }
+
+            // Auto-cambio de slides de Posters cada 5 segundos
+            let timerPosters = setInterval(nextPosterFunc, 5000);
+
+            function resetTimerPosters() {
+                clearInterval(timerPosters);
+                timerPosters = setInterval(nextPosterFunc, 5000);
+            }
+
+            // Inicializar el carrusel de posters
+            showPosterFunc(currentPoster);
+        });
+
+        // Inicializar el carrusel de congresos
+        showCongreso(currentCongreso);
+    </script>
+
+</body>
+</html>
